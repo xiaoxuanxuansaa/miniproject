@@ -23,21 +23,21 @@ public class TestSendEmail {
 
 	        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
 	        	   protected PasswordAuthentication getPasswordAuthentication() {
-	        		    return new PasswordAuthentication("liyuxuan9998@gmail.com", 
-	        		    		"nishiNISHI@");
+	        		    return new PasswordAuthentication("liyuxuan@gmail.com", 
+	        		    		"helloliyuxuan");
 	        		   }
 	        		  });
 
 	        try {
 	            Message message = new MimeMessage(session);
-	            message.setFrom(new InternetAddress("liyuxuan9998@gmail.com"));
+	            message.setFrom(new InternetAddress("liyuxuan@gmail.com"));
 	            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 	            message.setSubject("Testing Subject");
 	            message.setText("Hello, this is a test email with OTP: " + otp);
 
 	            Transport.send(message);
 	            //Transport transport = session.getTransport("smtp");
-	           // transport.connect("smtp.gmail.com", "choongwenjian@gmail.com", "isaac0427");
+	           // transport.connect("smtp.gmail.com", "liyuxuan@gmail.com", "helloliyuxuan");
 	            //transport.sendMessage(message, message.getAllRecipients());
 	            //transport.close();
 	            System.out.println("Email sent successfully.");
@@ -48,6 +48,6 @@ public class TestSendEmail {
 }
 	public static void main(String[] args) {
 		
-		sendEmail("LIYUXUAN9998@GMAIL.COM","123456");
+		sendEmail("LIYUXUAN@GMAIL.COM","123456");
 	}
 }
